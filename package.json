@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "juhunnmblog",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
@@ -30,14 +30,14 @@
     "gh-pages": "^6.1.1",
     "prettier": "^2.8.8"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/Juhunnm/Juhunnm.github.io.git",
   "keywords": [
     "gatsby"
   ],
   "license": "0BSD",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/Juhunnm/Juhunnm.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",
