@@ -20,14 +20,16 @@ const Layout = ({ location, title, children }) => {
     )
   }
 
-  return (
+  return ( 
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
+        Copyright © {new Date().getFullYear()}
         {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        Powered by
+        {` `}
+        <a href="/">Juhunnm</a>
       </footer>
     </div>
   )
