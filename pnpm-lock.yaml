@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@contentful/rich-text-react-renderer':
+        specifier: ^16.0.1
+        version: 16.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@contentful/rich-text-types':
+        specifier: ^17.0.0
+        version: 17.0.0
       '@egjs/react-infinitegrid':
         specifier: ^4.12.0
         version: 4.12.0
@@ -41,6 +47,9 @@ importers:
       gatsby-transformer-sharp:
         specifier: ^5.14.0
         version: 5.14.0(gatsby-plugin-sharp@5.14.0(gatsby@5.14.1(babel-eslint@10.1.0(eslint@8.57.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.33.0)(typescript@5.7.3))(graphql@16.10.0))(gatsby@5.14.1(babel-eslint@10.1.0(eslint@8.57.0))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@4.33.0)(typescript@5.7.3))(graphql@16.10.0)
+      prismjs:
+        specifier: ^1.29.0
+        version: 1.29.0
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -57,6 +66,9 @@ importers:
       '@types/node':
         specifier: ^20.11.19
         version: 20.17.14
+      '@types/prismjs':
+        specifier: ^1.26.5
+        version: 1.26.5
       '@types/react':
         specifier: ^18.2.55
         version: 18.3.18
@@ -756,8 +768,19 @@ packages:
       react: ^16.8.6 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0
 
+  '@contentful/rich-text-react-renderer@16.0.1':
+    resolution: {integrity: sha512-7wZZBMgwbq5Udp2KebKCJoh9K+EPGlgRkudhXSp+OxtAIdBC6JUz3Oi9kXXKYKLeSg7iTBpkO1dd0/xFjHHKbg==}
+    engines: {node: '>=6.0.0'}
+    peerDependencies:
+      react: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.6 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   '@contentful/rich-text-types@16.8.5':
     resolution: {integrity: sha512-q18RJuJCOuYveGiCIjE5xLCQc5lZ3L2Qgxrlg/H2YEobDFqdtmklazRi1XwEWaK3tMg6yVXBzKKkQfLB4qW14A==}
+    engines: {node: '>=6.0.0'}
+
+  '@contentful/rich-text-types@17.0.0':
+    resolution: {integrity: sha512-x50t6sILzFHBdFpAo0foJRnH8fHWyidheWhAv3uwt9aOnNqTh893gxyoc3Q0RVEZxXfHpTi+O9gmakHcdlRdTA==}
     engines: {node: '>=6.0.0'}
 
   '@egjs/children-differ@1.0.1':
@@ -1482,6 +1505,9 @@ packages:
 
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
+
+  '@types/prismjs@1.26.5':
+    resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
 
   '@types/prop-types@15.7.14':
     resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
@@ -3774,6 +3800,10 @@ packages:
     resolution: {integrity: sha512-Fd4gABb+ycGAmKou8eMftCupSir5lRxqf4aD/vd0cD2qc4HL07OjCeuHMr8Ro4CoMaeCKDB0/ECBOVWjTwUvPQ==}
     engines: {node: '>=8'}
 
+  is-plain-obj@3.0.0:
+    resolution: {integrity: sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA==}
+    engines: {node: '>=10'}
+
   is-plain-object@2.0.4:
     resolution: {integrity: sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og==}
     engines: {node: '>=0.10.0'}
@@ -4838,6 +4868,10 @@ packages:
 
   pretty-error@2.1.2:
     resolution: {integrity: sha512-EY5oDzmsX5wvuynAByrmY0P0hcp+QpnAKbJng2A2MPjVKXCxrDSUkzghVJ4ZGPIv+JC4gX8fPUWscC0RtjsWGw==}
+
+  prismjs@1.29.0:
+    resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
+    engines: {node: '>=6'}
 
   probe-image-size@7.2.3:
     resolution: {integrity: sha512-HubhG4Rb2UH8YtV4ba0Vp5bQ7L78RTONYu/ujmCu5nBI8wGv24s4E9xSKBi0N1MowRpxk76pFCpJtW0KPzOK0w==}
@@ -6871,7 +6905,17 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  '@contentful/rich-text-react-renderer@16.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@contentful/rich-text-types': 17.0.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   '@contentful/rich-text-types@16.8.5': {}
+
+  '@contentful/rich-text-types@17.0.0':
+    dependencies:
+      is-plain-obj: 3.0.0
 
   '@egjs/children-differ@1.0.1':
     dependencies:
@@ -7743,6 +7787,8 @@ snapshots:
   '@types/node@8.10.66': {}
 
   '@types/parse-json@4.0.2': {}
+
+  '@types/prismjs@1.26.5': {}
 
   '@types/prop-types@15.7.14': {}
 
@@ -10940,6 +10986,8 @@ snapshots:
 
   is-path-inside@3.0.3: {}
 
+  is-plain-obj@3.0.0: {}
+
   is-plain-object@2.0.4:
     dependencies:
       isobject: 3.0.1
@@ -11942,6 +11990,8 @@ snapshots:
     dependencies:
       lodash: 4.17.21
       renderkid: 2.0.7
+
+  prismjs@1.29.0: {}
 
   probe-image-size@7.2.3:
     dependencies:
