@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-typescript'
 import Comment from './Comment'
+import TableOfContents from './TableOfContents'
 import useRenderRichText from '../../hooks/useRenderRichText'
 
 type PostBodyProps = {
@@ -40,6 +41,7 @@ export default function PostBody({ content }: PostBodyProps) {
         <div id="content">{richText}</div>
         <Comment />
       </Content>
+      <TableOfContents content={content} />
     </Wrapper>
   )
 }
