@@ -18,6 +18,17 @@ const Wrapper = styled.div`
   aspect-ratio: 16 / 9;
   padding: 50px;
   border-radius: 20px;
+
+  @media (max-width: 1024px) {
+    padding: 30px;
+    gap: 15px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    gap: 10px;
+    border-radius: 10px;
+  }
 `
 
 const Title = styled.div`
@@ -32,6 +43,14 @@ const Title = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-height: 1.2em;
+
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `
 
 const Information = styled.div`
@@ -42,6 +61,16 @@ const Information = styled.div`
   font-size: 15px;
   font-weight: 300;
   color: #ffffff;
+
+  @media (max-width: 1024px) {
+    padding-bottom: 10px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 8px;
+    font-size: 11px;
+  }
 `
 
 const Category = styled.div`

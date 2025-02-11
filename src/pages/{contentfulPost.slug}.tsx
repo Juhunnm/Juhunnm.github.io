@@ -1,7 +1,8 @@
-import { PageProps, graphql } from 'gatsby'
+import { HeadFC, HeadProps, PageProps, graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import PostHead from '../components/post/PostHead'
 import PostBody from '../components/post/PostBody'
+import SEO from '../components/common/Seo'
 
 export default function Post({
   data: { contentfulPost },
@@ -23,6 +24,18 @@ export default function Post({
   )
 }
 
+export const Head: HeadFC<Queries.PostPageQuery> = ({
+  data: { contentfulPost },
+}: HeadProps<Queries.PostPageQuery>) => {
+  return (
+    <SEO
+      title={contentfulPost?.title as string}
+      description={contentfulPost?.description?.description as string}
+      pathname={`/${contentfulPost?.slug}`}
+      image={contentfulPost?.thumbnail?.url as string}
+    />
+  )
+}
 export const query = graphql`
   query PostPage($slug: String!) {
     contentfulPost(slug: { eq: $slug }) {

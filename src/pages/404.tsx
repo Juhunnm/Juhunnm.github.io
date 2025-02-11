@@ -1,49 +1,47 @@
-import * as React from 'react'
-import { Link, HeadFC, PageProps } from 'gatsby'
+import { Link, HeadFC } from 'gatsby'
+import styled from 'styled-components'
+import SEO from '../components/common/Seo'
 
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 150px 0;
+`
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4,
-}
+const Title = styled.div`
+  font-size: 30px;
+  font-weight: 700;
 
-const NotFoundPage: React.FC<PageProps> = () => {
+  @media (max-width: 768px) {
+    font-size: 25px;
+  }
+`
+
+const Description = styled.div`
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 300;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+`
+
+const PageLink = styled(Link)`
+  margin-top: 30px;
+  font-size: 15px;
+  color: inherit;
+`
+
+export default function NotFoundPage() {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === 'development' ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Wrapper>
+      <Title>페이지를 찾을 수 없습니다.</Title>
+      <Description>다른 콘텐츠를 보러 가보시겠어요?</Description>
+      <PageLink to="/">메인 페이지로</PageLink>
+    </Wrapper>
   )
 }
 
-export default NotFoundPage
-
-export const Head: HeadFC = () => <title>Not found</title>
+export const Head: HeadFC = () => <SEO />
