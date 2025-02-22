@@ -46,6 +46,7 @@ export default function Index({
   )
 }
 export const Head: HeadFC = () => <SEO />
+
 export const query = graphql`
   query IndexPage {
     allContentfulPost(sort: { date: DESC }) {

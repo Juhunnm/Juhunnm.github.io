@@ -1,4 +1,3 @@
-//페이지 제목 및 각종 메타데이터 컴포넌트트
 import { graphql, useStaticQuery } from 'gatsby'
 import { ReactNode } from 'react'
 

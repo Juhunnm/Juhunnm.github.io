@@ -36,15 +36,21 @@ export const Head: HeadFC<Queries.PostPageQuery> = ({
     />
   )
 }
+
 export const query = graphql`
   query PostPage($slug: String!) {
     contentfulPost(slug: { eq: $slug }) {
       title
-      thumbnail {
-        gatsbyImageData(width: 1000)
-      }
       category
       date
+      slug
+      thumbnail {
+        url
+        gatsbyImageData(width: 1000)
+      }
+      description {
+        description
+      }
       content {
         raw
       }
