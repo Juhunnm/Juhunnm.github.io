@@ -3,6 +3,8 @@ name: Deploy Blog
 on:
   push:
     branches: juhun
+  repository_dispatch:
+  types: [publish-event]
 
 jobs:
   build:
