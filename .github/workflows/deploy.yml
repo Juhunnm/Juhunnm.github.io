@@ -1,0 +1,47 @@
+# main 브랜치에 push하면 빌드해서 GitHub Pages(https://juhunnm.github.io/)로 배포합니다.
+# 저장소 Settings → Pages → Build and deployment → Source를 "GitHub Actions"로 설정해야 동작합니다.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # Actions 탭에서 수동 실행도 가능
+
+# Pages 배포에 필요한 최소 권한만 부여합니다.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 배포가 겹치면 최신 것만 남기고 이전 실행은 취소합니다.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22 # Vite 8 요구 버전(20.19+ / 22.12+)을 만족합니다.
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build # tsc -b && vite build → dist/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
