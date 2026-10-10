@@ -54,7 +54,9 @@ export const timeline: TimelineItem[] = [
     date: "2026.07.27 – 2026.08.14",
     title: "[ KOSA ] NIPA-NAVER Cloud Sovereign AI PBL 기반 프로젝트",
     projectId: "ncp-youtalk",
+    // 교육과정(4과정 × 30H = 120H) 전체 나열 대신 핵심 4개만 한 줄로 요약했습니다.
     points: [
+      "Sovereign AI 교육 120H: NCP 인프라·보안 아키텍처, 데이터 파이프라인, RAG·Agent, Agentic AI 개발·배포·운영",
       "NIPA-NAVER Cloud Sovereign AI PBL 대상",
       "YOU TALK(RAG 챗봇), 이중화·로드밸런서·NAT Gateway, RabbitMQ 비동기 처리",
     ],

@@ -9,6 +9,7 @@ import homelab2 from "../assets/homlab_2.png";
 import homelab3 from "../assets/homlab_3.png";
 import homelab4 from "../assets/homlab_4.png";
 import homelab5 from "../assets/homlab_5.png";
+import homelab6 from "../assets/homlab_6.png";
 import ncp1 from "../assets/NCP_Talk_1.png";
 import ncp2 from "../assets/NCP_Talk_2.png";
 import ncp3 from "../assets/NCP_Talk_3.png";
@@ -20,6 +21,7 @@ import comento2 from "../assets/comento_aws_2.png";
 import comento3 from "../assets/comento_aws_3.png";
 import comento4 from "../assets/comento_aws_4.png";
 import comento5 from "../assets/comento_aws_5.png";
+import comento6 from "../assets/comento_aws_6.png";
 
 export type ProjectSection = {
   label: string;
@@ -44,7 +46,7 @@ export type ProjectCase = {
 export const projects: ProjectCase[] = [
   {
     id: "raspberry-pi-home-server",
-    title: "온프렘 라즈베리파이 홈서버",
+    title: "온프레미스 라즈베리파이 홈서버",
     period: "개인 진행",
     role: "설계·구축·운영 전담",
     tech: [
@@ -60,15 +62,16 @@ export const projects: ProjectCase[] = [
       "집에 남는 라즈베리파이5로 개인 홈서버를 직접 설계·구축·운영까지 전담했습니다.",
     images: [
       { src: homelab1, alt: "라즈베리파이 기반 온프레미스 인프라 설계 및 구축 프로젝트 표지와 기술 스택" },
-      { src: homelab2, alt: "프로젝트 개요, 역할 및 구현 범위, 라즈베리파이 기반 아키텍처 다이어그램" },
-      { src: homelab3, alt: "핵심 기능: 서버 보안 강화, Cloudflare Tunnel 외부 노출, 컨테이너 구성 및 네트워크 분리, 모니터링" },
-      { src: homelab4, alt: "트러블슈팅: 서브패스 경로 중복, 터널 구성 후 설정 오류 3건의 증상·원인·해결·재발 방지" },
-      { src: homelab5, alt: "NCP 아키텍처 설계: 문제 상황, 해결, 기대 효과와 VPC 구성 다이어그램 (실제 구축은 미진행)" },
+      { src: homelab2, alt: "프로젝트 개요와 주요 구현 항목: 서버 구축 및 보안, 컨테이너 및 서비스 운영, 모니터링 및 운영 관리, 크롤링 및 설정 관리" },
+      { src: homelab3, alt: "아키텍처 다이어그램: Cloudflare Tunnel, Nginx, 내부 전용 네트워크의 프론트엔드·백엔드·DB·크롤러, Prometheus·Grafana 모니터링, GitHub Self-hosted Runner" },
+      { src: homelab4, alt: "아키텍처 핵심 요소: 서버 보안 강화, Cloudflare Tunnel 외부 노출, 컨테이너 구성 및 네트워크 분리, 모니터링" },
+      { src: homelab5, alt: "트러블슈팅: 서브패스 경로 중복, 터널 구성 후 설정 오류 3건의 증상·원인·해결·재발 방지" },
+      { src: homelab6, alt: "NCP 아키텍처 설계: 문제 상황, 해결, 기대 효과와 VPC 구성 다이어그램 (실제 구축은 미진행)" },
     ],
     sections: [
       {
         label: "개요",
-        body: "집에 남는 라즈베리파이5를 이용해 개인 홈서버를 직접 설계하고 구축, 운영까지 전담했습니다. 여러 서비스(모니터링용 Grafana, 개인 웹 애플리케이션 등)를 Docker Compose로 컨테이너별로 분리하고, 네트워크를 내부 전용 망과 외부 노출 망으로 나누어 DB를 내부 전용 네트워크에만 묶어 외부에서 직접 접근할 수 없도록 설계했습니다.",
+        body: "Raspberry Pi 5를 활용해 개인 홈서버를 직접 설계·구축하고 운영까지 전담했습니다. Docker Compose를 기반으로 Grafana와 개인 웹 애플리케이션 등 서비스를 컨테이너별로 분리하고, 내부 전용 네트워크와 외부 접근 네트워크를 구분해 데이터베이스의 외부 직접 접근을 차단하는 등 보안과 운영 효율성을 고려한 인프라를 구성했습니다.",
       },
       {
         label: "문제 상황",
@@ -100,7 +103,7 @@ export const projects: ProjectCase[] = [
   },
   {
     id: "aws-comento",
-    title: "AWS 실무 인프라 과정 (4주, 코멘토)",
+    title: "대기업 현직자와 함께 클라우드 IT AWS 구축부터 운영까지 실무 AtoZ",
     period: "4주",
     role: "VPC·IAM·KMS·모니터링 전반 설계",
     tech: [
@@ -121,15 +124,16 @@ export const projects: ProjectCase[] = [
       "실제 서비스가 올라갈 수 있는 가용성·비용·보안을 고려한 AWS 인프라를 직접 설계했습니다.",
     images: [
       { src: comento1, alt: "AWS EKS 기반 쿠버네티스 클라우드 인프라 구축 및 모니터링 자동화 프로젝트 표지" },
-      { src: comento2, alt: "프로젝트 개요, 기술 스택, AWS 아키텍처 다이어그램" },
-      { src: comento3, alt: "핵심 설계 결정 01 IAM 권한 설계, 02 Multi-AZ 네트워크 이중화 설계" },
-      { src: comento4, alt: "핵심 설계 결정 03 EFK 로그 파이프라인 설계, 04 리소스 라이프사이클 설계" },
-      { src: comento5, alt: "NAT Gateway 대비 NAT Instance 3개월 누적 비용 비교, 약 78% 비용 절감" },
+      { src: comento2, alt: "프로젝트 개요: 설계, 로그, 알림 세 가지 구성과 사용한 기술 스택" },
+      { src: comento3, alt: "AWS 아키텍처 다이어그램과 설계 요점: 외부 접점 최소화, 비용, 모니터링, 운영 자동화" },
+      { src: comento4, alt: "핵심 설계 결정 과정: 계정 권한, 네트워크, 로그 수집, 비용 관리의 문제·해결·결과" },
+      { src: comento5, alt: "장애 알림 자동화: CloudWatch, SNS, Lambda, Slack 흐름과 부하 테스트 및 Slack 수신 알림 화면" },
+      { src: comento6, alt: "비용 효율화를 위한 NAT 구성 설계: NAT Gateway 대비 NAT Instance 3개월 예상 비용 비교, 약 78% 비용 절감" },
     ],
     sections: [
       {
         label: "개요",
-        body: "코멘토에서 진행한 4주짜리 AWS 실무 인프라 교육과정에서, 실제 서비스가 올라갈 수 있는 가용성·비용·보안을 고려한 인프라를 직접 설계했습니다. 실습은 VPC와 서브넷을 가용영역(AZ)이 2개 이상인 Multi-AZ로 설계해, 한 개 가용영역이 죽어도 서비스가 정지되지 않도록 가용성을 확보하는 데서 시작했습니다. 그 다음은 프리티어 EC2 인스턴스를 NAT Instance로 직접 운영해, 관리형 NAT Gateway와 비교해 고정 비용을 많이 절감했습니다. 또한 EKS로 쿠버네티스 클러스터를 구성하고 컨테이너 워크로드를 배포했습니다.",
+        body: "코멘토 4주 AWS 실무 인프라 교육과정에서 가용성·비용 효율성·보안을 고려한 클라우드 인프라를 직접 설계하고 구축했습니다. VPC와 서브넷을 Multi-AZ로 구성해 고가용성 기반을 마련하고, EC2 기반 NAT Instance를 직접 운영해 관리형 NAT Gateway 대비 비용 절감 방안을 실습했습니다. 또한 Amazon EKS 클러스터를 구축하고 컨테이너 워크로드를 배포하며 클라우드 인프라 설계부터 컨테이너 운영까지 경험했습니다.",
       },
       {
         label: "보안 설정",
@@ -148,7 +152,7 @@ export const projects: ProjectCase[] = [
   },
   {
     id: "ncp-youtalk",
-    title: "NCP YOU TALK (RAG 챗봇)",
+    title: "YOU TALK | NCP 기반 YouTube RAG 챗봇",
     period: "11일",
     role: "프론트엔드 리드 · 이중화·로드밸런서·NAT Gateway 설계 공동 진행",
     tech: ["RAG", "HyperCLOVA X", "RabbitMQ", "로드밸런서", "NAT Gateway"],
@@ -158,14 +162,14 @@ export const projects: ProjectCase[] = [
       { src: ncp1, alt: "YOU TALK 표지: RAG 기반 유튜브 영상 탐색 및 질의응답 AI 서비스와 기술 스택" },
       { src: ncp2, alt: "문제 제기: 영상을 다 시청하기 싫으셨던 적 있으셨나요?" },
       { src: ncp3, alt: "핵심 기능: 폴더·영상별 채팅 분리, 임베딩 검색, 영상 추가, 근거 표시 모드, TTS 답변 듣기, 파일 변환·내보내기" },
-      { src: ncp4, alt: "NCP 기반 서비스 분리 아키텍처와 요청 흐름, 담당 역할" },
-      { src: ncp5, alt: "메시지 큐·Worker 기반 영상 분석 파이프라인 설계: 문제 상황, 해결, 기대 효과와 데이터 흐름도" },
-      { src: ncp6, alt: "NCP 네이티브 CI/CD 파이프라인 흐름도와 담당 역할" },
+      { src: ncp4, alt: "계층을 나눈 NCP 아키텍처: 요청 흐름, 담당 역할, VPC 구성 다이어그램" },
+      { src: ncp5, alt: "외부 API 차단을 메시지큐로 푼 과정: 문제 상황, 해결, 기대 효과와 영상 분석·RAG 데이터 흐름도" },
+      { src: ncp6, alt: "Web과 App으로 나뉜 CI/CD 파이프라인 흐름도와 담당 역할" },
     ],
     sections: [
       {
         label: "개요",
-        body: "YouTube 콘텐츠와 하이퍼클로바 X(HyperCLOVA X)를 연결한 RAG(Retrieval-Augmented Generation) 챗봇을 개발했습니다. 사용자가 질문하면 관련 YouTube 영상을 검색해 내용을 찾고, HyperCLOVA X를 통해 요약하여 답변하는 서비스를 개발했습니다.",
+        body: "사용자가 입력한 YouTube 링크를 분석하고, 영상 자막을 기반으로 대화할 수 있는 RAG 기반 챗봇 서비스 YOU TALK을 개발했습니다. HyperCLOVA X를 활용해 영상 내용을 바탕으로 질문에 답변하고, 근거가 되는 자막 정보를 함께 제공하여 사용자가 영상의 핵심 내용을 쉽게 파악하고 심층적으로 탐색할 수 있도록 구현했습니다.",
       },
       {
         label: "문제 상황",
